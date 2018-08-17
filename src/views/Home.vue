@@ -54,7 +54,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/styles/custom.scss';
 .home {
     padding: 0 10% 0 10%;
     display: flex;

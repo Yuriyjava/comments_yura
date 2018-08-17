@@ -113,7 +113,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/custom.scss';
 .edit-comment {
     display: flex;
     flex-direction: column;

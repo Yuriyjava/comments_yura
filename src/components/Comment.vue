@@ -45,7 +45,8 @@ export default {
         deleteComment(commentID) {
             this.$swal({
                 title: "You are going to delete comment now! Are you sure?",
-                showCancelButton: true
+                showCancelButton: true,
+                customClass:"swal-modal"
             }).then(({
                 value
             }) => {
@@ -59,7 +60,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-@import '@/styles/custom.scss';
+
 .card {
      @include card();
     margin-bottom: 15px;
@@ -104,6 +105,27 @@ export default {
         justify-content: center;
         button {
             margin-bottom: 20px;
+        }
+    }
+}
+</style>
+<style  lang="scss">
+.swal-modal{
+    background-color: $default-card-border-color;
+    .swal2-title{
+        color:$default-text-color
+    }
+    .swal2-actions{
+        button{
+        @include button()
+         border:0px;
+            &.swal2-cancel{
+                background-color: $save-color;
+            }
+            &.swal2-confirm{
+                 border:0px;
+                 background-color: $danger-color;
+            }
         }
     }
 }

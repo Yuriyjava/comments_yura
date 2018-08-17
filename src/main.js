@@ -9,6 +9,7 @@ const options = {
   toast: {
     position: SnotifyPosition.centerTop
   }
+
 }
 
 Vue.use(Snotify, options)

@@ -5,7 +5,6 @@
 </template>
 
 <style  lang="scss">
-@import '@/styles/custom.scss';
 body{
 background-color: $default-body-color;
 }
