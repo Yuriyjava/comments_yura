@@ -44,8 +44,21 @@ export default {
     },
     mounted() {
         this.comment = this.$route.params.comment || {};
+       
+        if (this.$route.params.id && !this.comment.id){
+            this.getComment();
+        }
+       
     },
     methods: {
+        getComment(){
+             API.get(`comments/${this.$route.params.id}`).then((e) => {
+                 // eslint-disable-next-line
+                if (e.data.success) {
+                    this.comment= e.data
+                }
+            });
+        },
         save() {
             if ((this.comment.author && this.comment.text)) {
                 if (!this.comment.created_at) {

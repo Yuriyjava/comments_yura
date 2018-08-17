@@ -12,7 +12,8 @@ export default new Router({
       component: Home
     },
     {
-      path: '/edit',
+      
+      path: '/edit/:id?',
       name: 'edit',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route

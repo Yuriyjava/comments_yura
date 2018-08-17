@@ -1,7 +1,7 @@
 <template>
 <div class="home">
     <div class="buttons-group">
-       <router-link :to="{ name: 'edit', params: { comment: null } }"> <button>Add new comment</button></router-link>
+       <router-link :to="{ name: 'edit'}"> <button>Add new comment</button></router-link>
     </div>
     <Comment v-for="comment in comments" :comment="comment" :key="comment.id" @delete="deleteComment"></Comment>
 

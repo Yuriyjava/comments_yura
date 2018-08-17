@@ -14,7 +14,7 @@
         <div v-if="comment.created_at !== comment.updated_at">{{new Date(comment.updated_at).toLocaleDateString(locale, dateOptions)}}</div>
     </div>
     <div class="card-buttons" v-show="active===comment.id">
-        <router-link :to="{ name: 'edit', params: { comment: comment } }"><button>Edit comment</button></router-link>
+        <router-link :to="{ name: 'edit', params: { id: comment.id, comment: comment } }"><button>Edit comment</button></router-link>
         <button @click="deleteComment(comment.id)">Delete comment</button>
     </div>
 
