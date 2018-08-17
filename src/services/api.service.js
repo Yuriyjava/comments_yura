@@ -77,12 +77,12 @@ let API = {
     return getNotification(req, o);
   },
 
-  delete(batch, o = null) {
+  delete(url, o = null) {
     let req = Axios.delete.apply(axios, arguments);
 
     return getNotification(req, o);
   },
-  put(batch, o = null) {
+  put(url, data, o = null) {
     let req = Axios.put.apply(axios, arguments);
 
     return getNotification(req, o);
