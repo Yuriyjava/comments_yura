@@ -50,9 +50,7 @@ export default {
                 value
             }) => {
                 if (!value) return;
-                  debugger
                 this.$emit("delete", commentID)
-              
             });
         }
     }

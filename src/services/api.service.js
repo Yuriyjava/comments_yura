@@ -1,6 +1,5 @@
 // import { API_URL } from '@/common/config'
 import Axios from "axios";
-
 import Vue from "vue";
 
 let axios = Axios.create(),
@@ -64,6 +63,7 @@ let getNotification = (req, o) => {
   return req;
 };
 axios.defaults.baseURL = "http://comments.stage.itsvit.org/api";
+
 let API = {
   get(url, o = null) {
     let req = axios.get.apply(axios, arguments);
@@ -78,12 +78,12 @@ let API = {
   },
 
   delete(url, o = null) {
-    let req = Axios.delete.apply(axios, arguments);
+    let req = axios.delete.apply(axios, arguments);
 
     return getNotification(req, o);
   },
   put(url, data, o = null) {
-    let req = Axios.put.apply(axios, arguments);
+    let req = axios.put.apply(axios, arguments);
 
     return getNotification(req, o);
   },

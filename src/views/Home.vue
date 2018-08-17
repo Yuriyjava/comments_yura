@@ -42,7 +42,6 @@ export default {
             });
         },
         deleteComment(commentID) {
-              debugger
             // eslint-disable-next-line
             API.delete(`comments/${commentID}`)
                 .then(() => (this.getComments()))
