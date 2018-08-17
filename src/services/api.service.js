@@ -63,7 +63,7 @@ let getNotification = (req, o) => {
 
   return req;
 };
-
+axios.defaults.baseURL = "http://comments.stage.itsvit.org/api";
 let API = {
   get(url, o = null) {
     let req = axios.get.apply(axios, arguments);
@@ -90,7 +90,7 @@ let API = {
 
 };
 
-axios.defaults.baseURL = "http://comments.stage.itsvit.org/api";
+
 
 
 

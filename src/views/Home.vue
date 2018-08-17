@@ -1,10 +1,9 @@
 <template>
 <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-
-    <router-link to="/about">About</router-link>
-    <Comment v-for="comment in validComments" :comment="comment" :key="comment.id"></Comment>
+    <div class="buttons-group">
+       <router-link :to="{ name: 'edit', params: { comment: null } }"> <button>Add new comment</button></router-link>
+    </div>
+    <Comment v-for="comment in comments" :comment="comment" :key="comment.id" @delete="deleteComment"></Comment>
 
 </div>
 </template>
@@ -28,32 +27,54 @@ export default {
         };
     },
     computed: {
-        validComments: function () {
-            return this.comments.filter(function (comment) {
-               // eslint-disable-next-line
-              debugger
-                return comment.id
-            });
-        }
+
     },
     methods: {
         getComments() {
-          
             API.get("comments").then((e) => {
-               
+
                 if (e.data.success) {
-                    this.comments = e.data;
+                    let arr = Object.values(e.data);
+                    this.comments = arr.filter(function (comment) {
+                        return comment.id
+                    });
                 }
             });
+        },
+        deleteComment(commentID) {
+              debugger
+            // eslint-disable-next-line
+            API.delete(`comments/${commentID}`)
+                .then(() => (this.getComments()))
+                // eslint-disable-next-line
+                .catch(err => (console.error(err)));
         }
     }
+
 }
 </script>
 
-<style scoped>
+<style lang="scss">
 .home {
     display: flex;
     flex-direction: column;
     align-items: center;
+    button {
+        height: 40px;
+        width: 200px;
+        border-radius: 5px;
+        background-color: #f2b632;
+        color: #677077;
+        border: none;
+        outline-width: 0px;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    button:hover {
+        cursor: pointer;
+        border: 1px solid #f2b632;
+        background-color: #677077;
+        color: #f2b632;
+    }
 }
 </style>
