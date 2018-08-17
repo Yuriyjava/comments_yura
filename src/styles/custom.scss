@@ -1,0 +1,41 @@
+
+$default-text-color: #b5b5b7;
+$default-body-color: #252839;
+$default-button-background-color: #f2b632;
+$default-card-background-color: #4a5055;
+$default-card-border-color: #677077;
+$default-button-text-color: $default-card-background-color;
+$danger-color:#b56969;
+$save-color:#22264b;
+
+
+
+@mixin card(){
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: 1px solid $default-card-border-color;
+    border-radius: 5px;
+    color: $default-text-color;
+    background-color: $default-card-background-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+@mixin button(){
+    height: 40px;
+    width: 200px;
+    border-radius: 5px;
+    background-color: $default-button-background-color;
+    color: $default-button-text-color;
+    border: none;
+    outline-width: 0px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    &:hover{
+        cursor: pointer;
+        border: 1px solid $default-button-background-color;
+        background-color: $default-card-background-color;
+        color: $default-button-background-color;  
+    }
+}

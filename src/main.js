@@ -2,7 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import VueSweetalert2 from 'vue-sweetalert2';
-import Snotify, { SnotifyPosition } from 'vue-snotify'
+import Snotify, { SnotifyPosition } from 'vue-snotify';
+//import '@/styles/custom.scss';
 
 const options = {
   toast: {

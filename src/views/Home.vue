@@ -54,26 +54,15 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/styles/custom.scss';
 .home {
+    padding: 0 10% 0 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
     button {
-        height: 40px;
-        width: 200px;
-        border-radius: 5px;
-        background-color: #f2b632;
-        color: #677077;
-        border: none;
-        outline-width: 0px;
-        font-size: 18px;
-        margin-bottom: 20px;
+       @include button();
     }
-    button:hover {
-        cursor: pointer;
-        border: 1px solid #f2b632;
-        background-color: #677077;
-        color: #f2b632;
-    }
+   
 }
 </style>

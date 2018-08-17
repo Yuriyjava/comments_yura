@@ -4,9 +4,10 @@
   </div>
 </template>
 
-<style>
+<style  lang="scss">
+@import '@/styles/custom.scss';
 body{
-background-color: #252839;
+background-color: $default-body-color;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

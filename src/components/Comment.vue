@@ -59,48 +59,45 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+@import '@/styles/custom.scss';
 .card {
-    width: 400px;
-    height: 250px;
-    border: 1px solid #4a5055;
-    border-radius: 5px;
+     @include card();
     margin-bottom: 15px;
-    background-color: #677077;
-    color: #b5b5b7;
-    display: flex;
     flex-direction: row;
     justify-content: flex-start;
     position: relative;
     .headers,
     .body {
         div {
-            height: 50px;
-            text-align: center;
-            line-height: 50px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            height: 40px;
+            text-align: left;
+            line-height: 40px;
         }
     }
     .headers {
         div {
-            width: 85px;
+            text-transform: capitalize;
+            min-width: 85px;
+            flex-grow: 1;
             margin-right: 15px;
-        }
-        div:nth-of-type(2) {
-            min-height: 100px;
-            line-height: 100px;
         }
     }
     .body {
-        div:nth-of-type(2) {
-            min-height: 100px;
-            text-align: left;
-            line-height: 16px;
+        width: calc(100% - 95px);
+         div:nth-of-type(1) {
+            text-decoration: underline;
         }
     }
     .card-buttons {
         position: absolute;
         background-color: rgba(37, 40, 57, 0.6);
-        width: 400px;
-        height: 250px;
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top:0px;
         display: flex;
         flex-direction: column;
         align-items: center;
