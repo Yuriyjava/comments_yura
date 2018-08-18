@@ -1,13 +1,15 @@
 
-$default-text-color: #b5b5b7;
+$default-text-color: #333;
 $default-body-color: #252839;
-$default-button-background-color: #f2b632;
-$default-card-background-color: #4a5055;
-$default-card-border-color: #677077;
+$default-button-background-color: #32bcf2;
+$default-card-background-color: #e9ebf3;
+$default-card-border-color: #99a6b1;
 $default-button-text-color: $default-card-background-color;
-$danger-color:#b56969;
-$save-color:#22264b;
+$default-card-button-background-color: rgba(76, 143, 231, 0.6);
 
+$danger-color:#b56969;
+$save-color:#3c763d;
+$cancel-color:#5d6469;
 
 
 @mixin card(){
@@ -32,10 +34,58 @@ $save-color:#22264b;
     outline-width: 0px;
     font-size: 18px;
     margin-bottom: 20px;
+    transition: background-color 0.4s ease-in;
+    transition: color 0.4s ease-in;
     &:hover{
         cursor: pointer;
         border: 1px solid $default-button-background-color;
         background-color: $default-card-background-color;
         color: $default-button-background-color;  
     }
+}
+@mixin avatar {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: rgba(189, 189, 189, 0.74);
+    border: 1px solid rgb(154, 155, 156);
+}
+body{
+	margin:0;
+	padding:0;
+	font-family:"arial",heletica,sans-serif;
+
+    background: #2980b9 url('https://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png') repeat 0 0;
+	-webkit-animation: 10s linear 0s normal none infinite animate;
+	-moz-animation: 10s linear 0s normal none infinite animate;
+	-ms-animation: 10s linear 0s normal none infinite animate;
+	-o-animation: 10s linear 0s normal none infinite animate;
+	animation: 10s linear 0s normal none infinite animate;
+ 
+}
+ 
+@-webkit-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ 
+@-moz-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ 
+@-ms-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ 
+@-o-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ 
+@keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
 }

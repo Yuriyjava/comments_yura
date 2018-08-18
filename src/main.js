@@ -15,6 +15,7 @@ const options = {
 Vue.use(Snotify, options)
 Vue.use(VueSweetalert2);
 Vue.config.productionTip = false
+Vue.use(require('vue-moment'));
 
 new Vue({
   router,
