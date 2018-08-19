@@ -7,11 +7,10 @@
         </div>
     </div>
     <div class="body">
-        <div>@{{comment.author}}</div>
+        <div>@{{comment.author}} <span v-if="comment.created_at !== comment.updated_at"> <span  class="time-header">Updated:</span>{{comment.updated_at | moment("from")}}</span></div>
         <div>{{comment.text}}</div>
         <div>
-            <span><span class="time-header">Creadted at:</span>{{ comment.created_at | moment("from")}}</span>
-            <span v-if="comment.created_at !== comment.updated_at"> <span  class="time-header">Updated at:</span>{{comment.updated_at | moment("from")}}</span>
+            <span><span class="time-header">Creadted:</span>{{ comment.created_at | moment("from")}}</span>
         </div>
     </div>
     <div class="card-buttons" :class="active!=comment.id? 'hidden':'' ">
